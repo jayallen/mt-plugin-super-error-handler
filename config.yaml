@@ -1,0 +1,10 @@
+name: Super Error Handler
+description: A plugin for Melody/Movable Type used to diagnose empty error messages
+version: 0.1.0
+author_name: Endevver, LLC
+author_link: http://endevver.com
+id: SuperErrorHandler
+key: SuperErrorHandler
+
+callbacks:
+    init_app: $SuperErrorHandler::MT::ErrorHandler::Super::init_app
