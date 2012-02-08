@@ -3,7 +3,7 @@ package MT::ErrorHandler::Super;
 use strict;
 use warnings;
 use Sub::Install;
-# use Carp qw( cluck );  # Use this instead of warn if you need a stack trace
+use Carp qw( carp cluck );  # Use cluck instead if you need a stack trace
 
 our ( $error );
 
@@ -20,7 +20,7 @@ sub init_app {
 sub error {
     my $self = shift;
     my $msg  = shift;
-    warn("Empty error thrown from ".(caller(1))[3])
+    carp("Empty error thrown from ".(caller(1))[3])
         unless defined $msg and $msg ne '';
     $error->( $self, $msg );
 }
